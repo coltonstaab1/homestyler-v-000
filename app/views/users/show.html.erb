@@ -1,16 +1,1 @@
-<div>
-  <h2>Designers</h2><br>
-  <ul>
-    <% User.where(designer: 'true').order('name ASC').each do |user| %>
-      <li><%= user.name %></li>
-    <% end %>
-  </ul>
-</div>
-<div>
-  <h2>Users</h2>
-  <ul>
-    <% User.where(designer: 'false').order('name ASC').each do |user| %>
-      <li><%= user.name %></li>
-    <% end %>
-  </ul>
-</div>
+User show page!
