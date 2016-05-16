@@ -4,4 +4,11 @@
 </ul>
 <h2>Rooms:</h2>
 <ul>
+  <% @user.rooms.each do |room| %>
+    <li><%= link_to room.description, room_path(room) %></li>
+  <% end %>
 </ul>
+
+<div>
+  <%= link_to "Edit your information", edit_user_path(@user) %>
+</div>

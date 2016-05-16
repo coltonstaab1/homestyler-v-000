@@ -26,6 +26,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'pry'
+gem 'wannabe_bool'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

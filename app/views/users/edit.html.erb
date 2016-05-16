@@ -1,1 +1,26 @@
-edit page
+<h1>Edit your user information</h1><br>
+
+<%= form_for(@user) do |f| %>
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+    
+  </div>
+    <%= f.label :designer, "Designer?" %><br>
+    <%= f.label :designer, "Yes" %>
+    <%= f.radio_button :designer, value: "true".to_bool %>
+    <%= f.label :designer, "No" %>
+    <%= f.radio_button :designer, value: 'false' %>
+  <div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+    
+  </div>
+<% end %>
