@@ -1,0 +1,20 @@
+<h1>All rooms on Roomstyler</h1><br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User</th>
+    <th>Width</th>
+    <th>Length</th>
+  </tr>
+
+  <% @rooms.each do |room| %>
+
+  <tr>
+    <td><%= link_to room.description, room_path(room) %></td>
+    <td><%= link_to room.user.name, user_path(room.user) %></td>
+    <td><%= room.width %></td>
+    <td><%= room.depth %></td>
+
+  <% end %>
+  </tr>
+</table>
