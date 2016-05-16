@@ -6,9 +6,8 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :rooms
-  has_many :furniture_pieces
+  has_many :furniture_pieces, through: :rooms
   has_many :furnitures
-  has_many :furniture_types, through: :furniture_pieces
 
 
   def self.from_omniauth(auth)

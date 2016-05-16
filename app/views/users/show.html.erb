@@ -15,8 +15,15 @@
 
 <div>
   <%= current_user == @user ? "You own the following furniture:" : "#{@user.name} owns the following furniture:" %>
-  <ul>
-
-  </ul>
+    <table>
+      <tr>
+        <th>Room</th>
+        <th>Item</th>
+      </tr>
+      <% @user.furniture_pieces.each do |piece| %>
+        <td><%= link_to piece.room.description, room_path(piece.room) %></td>
+        <td><%= link_to piece.furniture.description, furniture_path(piece.furniture) %></td>
+      <% end %>
+    </table>
   
 </div>
