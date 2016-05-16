@@ -1,16 +1,16 @@
 <div>
   <h2>Designers</h2><br>
   <ul>
-    <% User.where(designer: 'true').each do |user| %>
-      <li><%= user.name %></li>
+    <% @designers.each do |user| %>
+      <li><%= link_to user.name, user_path(user) %></li>
     <% end %>
   </ul>
 </div>
 <div>
   <h2>Users</h2>
   <ul>
-    <% User.where(designer: 'false').each do |user| %>
-      <li><%= user.name %></li>
+    <% @users.each do |user| %>
+      <li><%= link_to user.name, user_path(user) %></li>
     <% end %>
   </ul>
 </div>
