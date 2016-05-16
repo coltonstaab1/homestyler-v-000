@@ -1,4 +1,32 @@
 <h1>Create a new room</h1>
 <%= form_for(@room) do |f| %>
 
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+
+  <div>
+    <%= f.label :width %><br>
+    <%= f.number_field :width %>
+  </div>
+
+  <div>
+    <%= f.label :depth, "Length" %><br>
+    <%= f.number_field :depth %>
+  </div>
+
+  <div>
+    <%= f.fields_for :furniture_pieces do |piece| %>
+      <%= piece.label :furniture_id, "Select item of furniture:" %><br>
+      <%= piece.collection_select :furniture_id, Furniture.all, :id, :description %>
+    <% end %>
+  <div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+
 <% end %>
