@@ -1,0 +1,10 @@
+<h1>Roomstyler Furniture Market</h1><br>
+<% @furniture_types.each do |type| %>
+  <h2><%= type.description %></h2>
+  <ul>
+  <% type.furnitures.each do |furniture| %>
+    <li><%= link_to furniture.description, furniture_path(furniture) %></li>
+  <% end %>
+  </ul>
+<% end %>
+<%= link_to new_furniture_path if current_user.designer %>

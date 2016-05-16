@@ -9,6 +9,8 @@
 <div>
   <h2>Furniture</h2>
   <ul>
-    <% binding.pry %>
+    <% @room.furniture_pieces.each do |piece| %>
+      <li><%= link_to piece.furniture.description, furniture_path(piece.furniture) %></li>
+    <% end %>
   </ul>
 </div>

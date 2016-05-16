@@ -1,0 +1,42 @@
+<%= form_for(@furniture) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+
+  <div>
+    <%= f.label :price %><br>
+    <%= f.number_field :price, :class => 'text_field', :step => '0.01' %>
+  </div>
+
+  <div>
+    <%= f.label :height %><br>
+    <%= f.number_field :height, class: :text_field, step: 'any' %>
+  </div>
+
+  <div>
+    <%= f.label :width %><br>
+    <%= f.number_field :width, class: :text_field, step: 'any' %>
+  </div>
+
+  <div>
+    <%= f.label :depth %><br>
+    <%= f.number_field :depth, class: :text_field, step: 'any' %>
+  </div>
+
+  <div>
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= f.label :furniture_type_id, "Furniture Type" %><br>
+    <%= f.collection_select :furniture_type_id, FurnitureType.all, :id, :description %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
