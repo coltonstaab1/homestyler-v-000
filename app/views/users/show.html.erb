@@ -12,3 +12,11 @@
 <div>
   <%= link_to "Edit your information", edit_user_path(@user) %>
 </div>
+
+<div>
+  <%= current_user == @user ? "You own the following furniture:" : "#{@user.name} owns the following furniture:" %>
+  <ul>
+
+  </ul>
+  
+</div>
