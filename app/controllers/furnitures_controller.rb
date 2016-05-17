@@ -14,8 +14,14 @@ class FurnituresController < ApplicationController
   end
 
   def create
-    @furniture = Furniture.create(furniture_params)
-    redirect_to furniture_path(@furniture)
+    @furniture = Furniture.new(furniture_params)
+
+    if @furniture.save
+      redirect_to furniture_path(@furniture)
+    else
+      render :new
+    end
+    
   end
 
   private

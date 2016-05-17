@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    binding.pry
     @designers = User.where(designer: true).order('name asc')
     @users = User.where(designer: "false").order('name asc')
   end
