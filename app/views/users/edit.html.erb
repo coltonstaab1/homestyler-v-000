@@ -1,5 +1,20 @@
 <h1>Edit your user information</h1><br>
 
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@user.errors.count, "error") %>
+      prohibited this user from being saved:
+    </h2>
+ 
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for(@user) do |f| %>
   <div>
     <%= f.label :name %><br>
@@ -13,9 +28,9 @@
   </div>
     <%= f.label :designer, "Designer?" %><br>
     <%= f.label :designer, "Yes" %>
-    <%= f.radio_button :designer, value: "true".to_bool %>
+    <%= f.radio_button :designer, "true".to_bool %>
     <%= f.label :designer, "No" %>
-    <%= f.radio_button :designer, value: 'false' %>
+    <%= f.radio_button :designer, 'false'.to_bool %>
   <div>
 
   <div>

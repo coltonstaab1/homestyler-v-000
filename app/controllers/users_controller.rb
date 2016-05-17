@@ -15,9 +15,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    binding.pry
     @user = User.find(params[:id])
-    @user.update(user_update_params)
-    redirect_to user_path(@user)
+    #@user.designer = eval(params[:user][:designer])[:value]
+    if @user.update(user_update_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
   end
 
   private
