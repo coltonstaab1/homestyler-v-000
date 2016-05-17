@@ -14,3 +14,5 @@
     <% end %>
   </ul>
 </div>
+
+<%= link_to "Create new room", new_user_room_path(@room.user) if current_user == @room.user %>

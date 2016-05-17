@@ -35,13 +35,6 @@
   </div>
 
   <div>
-    <%= f.fields_for :furniture_pieces do |piece| %>
-      <%= piece.label :furniture_id, "Select item of furniture:" %><br>
-      <%= piece.collection_select :furniture_id, Furniture.all, :id, :description %>
-    <% end %>
-  <div>
-
-  <div>
     <%= f.submit %>
   </div>
 
