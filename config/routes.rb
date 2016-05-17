@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update]
   resources :rooms
   resources :furnitures
+  get '/missing_page', to: 'static#missing_page'
+  get '*path' => redirect('/missing_page')
 end

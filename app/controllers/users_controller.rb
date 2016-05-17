@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   end
 
   def index
-    @designers = User.where(designer: 'true').order('name asc')
-    @users = User.where(designer: 'false').order('name asc')
+    binding.pry
+    @designers = User.where(designer: true).order('name asc')
+    @users = User.where(designer: "false").order('name asc')
   end
 
   def edit

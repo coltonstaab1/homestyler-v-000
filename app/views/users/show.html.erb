@@ -1,7 +1,4 @@
-<ul>
-  <li>Name: <%= @user.name %></li>
-  <li>Role: <%= @user.designer ? "Designer" : "Homeowner" %></li>
-</ul>
+<h1><%= "#{@user.name} | #{@user.designer ? 'Designer' : 'Homeowner'}" %><h1> 
 <h2>Rooms:</h2>
 <ul>
   <% @user.rooms.each do |room| %>
@@ -10,11 +7,7 @@
 </ul>
 
 <div>
-  <%= link_to "Edit your information", edit_user_path(@user) %>
-</div>
-
-<div>
-  <%= current_user == @user ? "You own the following furniture:" : "#{@user.name} owns the following furniture:" %>
+  <h2><%= current_user == @user ? "You own the following furniture:" : "#{@user.name} owns the following furniture:" %></h2>
     <table>
       <tr>
         <th>Room</th>
@@ -27,5 +20,11 @@
         </tr>
       <% end %>
     </table>
-  
+</div><br>
+
+<div>
+  <%= link_to_if(@user == current_user, "Edit your information", edit_user_path(@user)){} %>
+</div>
+<div>
+  <%= link_to_if(@user == current_user && @user.designer, "Create new furniture piece", new_furniture_path){} %>
 </div>
