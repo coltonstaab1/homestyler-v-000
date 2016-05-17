@@ -2,6 +2,7 @@ class FurnituresController < ApplicationController
 
   def index
     @furniture_types = FurnitureType.all
+    @most_popular = Furniture.find(FurniturePiece.most_popular).description
   end
 
   def show

@@ -1,4 +1,5 @@
 <h1>Roomstyler Furniture Market</h1><br>
+<h2><%= "Trending today: #{@most_popular}" %></h2>
 <% @furniture_types.each do |type| %>
   <h2><%= type.description %></h2>
   <ul>
