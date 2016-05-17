@@ -21,8 +21,10 @@
         <th>Item</th>
       </tr>
       <% @user.furniture_pieces.each do |piece| %>
-        <td><%= link_to piece.room.description, room_path(piece.room) %></td>
-        <td><%= link_to piece.furniture.description, furniture_path(piece.furniture) %></td>
+        <tr>
+          <td><%= link_to piece.room.description, room_path(piece.room) %></td>
+          <td><%= link_to piece.furniture.description, furniture_path(piece.furniture) %></td>
+        </tr>
       <% end %>
     </table>
   

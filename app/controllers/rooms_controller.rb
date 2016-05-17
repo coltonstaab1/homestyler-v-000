@@ -15,7 +15,6 @@ class RoomsController < ApplicationController
   end
 
   def create
-    binding.pry
     @room = Room.create(room_params)
     redirect_to room_path(@room)
   end
