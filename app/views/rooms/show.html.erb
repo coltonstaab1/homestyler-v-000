@@ -8,11 +8,28 @@
 </div>
 <div>
   <h2>Furniture</h2>
-  <ul>
-    <% @room.furniture_pieces.each do |piece| %>
-      <li><%= link_to piece.furniture.description, furniture_path(piece.furniture) %></li>
-    <% end %>
-  </ul>
+  <table>
+    <thead>
+      <td>
+        Item name
+      </td>
+      <td>
+        Purchased?
+      </td>
+    </thead>
+    <tbody>
+      <% @room.furniture_pieces.each do |piece| %>
+        <tr>
+          <td>
+            <%= link_to piece.furniture.description, furniture_path(piece.furniture) %>
+          </td>
+          <td>
+            <%= human_boolean(piece.purchased) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
 <%= link_to "Create new room", new_user_room_path(@room.user) if current_user == @room.user %>

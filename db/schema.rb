@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(version: 20160516204804) do
   create_table "furniture_pieces", force: :cascade do |t|
     t.integer  "room_id"
     t.integer  "furniture_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "purchased",    default: "f"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "furniture_types", force: :cascade do |t|
