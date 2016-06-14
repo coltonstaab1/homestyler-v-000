@@ -9,14 +9,11 @@
 <p>
   Then run the following in your command line:
 </p>
-    <pre>
-      <code>
         git clone
         cd 
         bundle
         rake db:migrate
-      </code>
-    </pre>
+
 <p>
   To start up a local server, run rails s in your command line, and then navigate to localhost:3000 in your web browser.
 </p>
