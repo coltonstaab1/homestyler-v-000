@@ -47,13 +47,13 @@
   </div>
 
   <%= f.fields_for :furniture_type do |type| %>
+      <div>
+    <%= type.label :furniture_type, "Furniture Type" %><br>
+    <%= type.text_field :furniture_type %>
+  </div>
 
   <% end %>
 
-  <div>
-    <%= f.label :furniture_type, "Furniture Type" %><br>
-    <%= f.text_field :furniture_type %>
-  </div>
 
   <div>
     <%= f.submit %>
