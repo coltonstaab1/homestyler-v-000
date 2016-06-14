@@ -1,4 +1,9 @@
-<h1>All rooms on Roomstyler</h1><br>
+<% if @user %>
+  <h1><%= "#{@user.name}'s rooms" %></h1>
+<% else %>
+  <h1>All rooms on Roomstyler</h1><br>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>

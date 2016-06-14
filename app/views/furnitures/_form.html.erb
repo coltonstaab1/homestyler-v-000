@@ -46,6 +46,10 @@
     <%= f.number_field :quantity %>
   </div>
 
+  <%= f.fields_for :furniture_type do |type| %>
+
+  <% end %>
+
   <div>
     <%= f.label :furniture_type_id, "Furniture Type" %><br>
     <%= f.collection_select :furniture_type_id, FurnitureType.all, :id, :description %>

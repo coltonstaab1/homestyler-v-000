@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :furniture_pieces, through: :rooms
   has_many :furnitures
 
-  validates_presence_of :name
+  #validates_presence_of :name
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    binding.pry
     @user = User.find(params[:id])
     #@user.designer = eval(params[:user][:designer])[:value]
     if @user.update(user_update_params)

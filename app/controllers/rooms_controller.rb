@@ -2,12 +2,12 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if params[:user_id]
+    @user = User.find_by(id: params[:user_id])
+    if @user
       @rooms = User.find(params[:user_id]).rooms
     else
       @rooms = Room.all
     end
-    
   end
 
   def show
@@ -20,7 +20,6 @@ class RoomsController < ApplicationController
   end
 
   def create
-    binding.pry
     @room = Room.new(room_params)
 
     if @room.save
