@@ -51,8 +51,8 @@
   <% end %>
 
   <div>
-    <%= f.label :furniture_type_id, "Furniture Type" %><br>
-    <%= f.collection_select :furniture_type_id, FurnitureType.all, :id, :description %>
+    <%= f.label :furniture_type, "Furniture Type" %><br>
+    <%= f.text_field :furniture_type %>
   </div>
 
   <div>
