@@ -3,7 +3,6 @@ class FurniturePiece < ActiveRecord::Base
   has_one :user, :through => :room
   belongs_to :furniture
   validates_presence_of :room_id, :furniture_id
-  accepts_nexted_attributes_for :furniture_types
 
   def self.most_popular
     list_of_lists_including_ids = FurniturePiece.group('furniture_id').order('count_furniture_id desc').count('furniture_id').first(3)
