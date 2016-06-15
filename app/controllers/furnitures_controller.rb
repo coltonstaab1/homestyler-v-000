@@ -6,6 +6,7 @@ class FurnituresController < ApplicationController
   end
 
   def show
+    binding.pry
     @furniture = Furniture.find(params[:id])
   end
 

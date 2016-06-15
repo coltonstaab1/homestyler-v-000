@@ -26,5 +26,5 @@
   <%= link_to_if(@user == current_user, "Edit your information", edit_user_path(@user)){} %>
 </div>
 <div>
-  <%= link_to_if(@user == current_user && @user.designer, "Create new furniture piece", new_furniture_path){} %>
+  <%= link_to_if(@user == current_user && @user.designer, "Create new furniture piece", new_user_furniture_path(@user)){} %>
 </div>
