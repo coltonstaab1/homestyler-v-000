@@ -1,12 +1,18 @@
 class FurnituresController < ApplicationController
 
   def index
-    @furniture_types = FurnitureType.all
     @most_popular = FurniturePiece.most_popular
+    if params.has_key?("user_id")
+      @user = User.find_by(id: params[:user_id])
+      @furnitures = @user.furnitures
+    else
+      @furnitures = Furniture.all
+      
+    end
+
   end
 
   def show
-    binding.pry
     @furniture = Furniture.find(params[:id])
   end
 

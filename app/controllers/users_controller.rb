@@ -16,7 +16,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    #@user.designer = eval(params[:user][:designer])[:value]
     if @user.update(user_update_params)
       redirect_to user_path(@user)
     else

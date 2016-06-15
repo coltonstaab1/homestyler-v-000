@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   resources :users, only: [:index, :show, :edit, :update] do 
     resources :rooms, only: [:index, :show, :edit, :new, :update]
-    resources :furnitures, only: [:new, :create]
+    resources :furnitures, only: [:new, :create, :index]
   end
   resources :rooms
   resources :furnitures

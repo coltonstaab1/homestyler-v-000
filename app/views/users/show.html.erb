@@ -28,3 +28,6 @@
 <div>
   <%= link_to_if(@user == current_user && @user.designer, "Create new furniture piece", new_user_furniture_path(@user)){} %>
 </div>
+<div>
+  <%= link_to "View user's furniture", user_furnitures_path(@user) %>
+</div>
