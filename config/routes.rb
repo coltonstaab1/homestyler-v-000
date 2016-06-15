@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :furnitures
   get '/missing_page', to: 'static#missing_page'
   get '*path' => redirect('/missing_page')
+  get '/users/:id/furnitures/new', to: 'furnitures#new'
+  post '/users/:id/furnitures/', to: 'furnitures#create'
 end

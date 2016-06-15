@@ -16,7 +16,6 @@ class FurnituresController < ApplicationController
 
   def create
     @furniture = Furniture.new(furniture_params)
-    binding.pry
 
     if @furniture.save
       redirect_to furniture_path(@furniture)

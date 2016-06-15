@@ -5,7 +5,6 @@ class Furniture < ActiveRecord::Base
   accepts_nested_attributes_for :furniture_type
 
   def furniture_type_attributes=(furniture_type)
-    binding.pry
     @furniture_type = FurnitureType.find_or_create_by(description: furniture_type["description"])
     @furniture_type.update(furniture_type)
     self.furniture_type = @furniture_type
